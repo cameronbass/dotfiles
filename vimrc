@@ -22,6 +22,7 @@ set number
 set nowrap
 set smartindent
 set autoindent
+let g:mapleader=','
 
 function! s:DiffWithSaved()
 				let filetype=&ft
