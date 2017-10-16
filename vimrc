@@ -2,11 +2,14 @@
 call plug#begin('~/.vim/plugged')
 	Plug 'junegunn/vim-easy-align'
 	Plug 'vim-ruby/vim-ruby'
-	Plug 'micha/vim-colors-solarized'
+	Plug 'altercation/vim-colors-solarized'
 	Plug 'flazz/vim-colorschemes'
 	Plug 'airblade/vim-gitgutter'
 	Plug 'tpope/vim-rails'
 	Plug 'elixir-lang/vim-elixir'
+	Plug 'dkprice/vim-easygrep'
+	Plug 'yegappan/mru'
+	Plug 'scrooloose/nerdtree'
 call plug#end()
 
 set runtimepath^=~/.vim/bundle/ctrlp.vim
@@ -17,21 +20,20 @@ call vundle#begin()
 call vundle#end()
 
 "=============-My Configurations-=======
-set tabstop=2
+set tabstop=2 softtabstop=0 expandtab shiftwidth=2 smarttab
 set number
 set nowrap
+set paste
 set smartindent
 set autoindent
-let g:mapleader=','
+set cindent
+set mouse=a
+set noswapfile
+filetype plugin indent on
 
-function! s:DiffWithSaved()
-				let filetype=&ft
-				diffthis
-				vnew | r # | normal! 1Gdd
-				diffthis
-				exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
-endfunction
-com! DiffSaved call s:DiffWithSaved()
+map <C-n> :NERDTreeToggle<CR>
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 "=============-My Colors-===============
 :syntax on
