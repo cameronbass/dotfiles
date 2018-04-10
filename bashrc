@@ -17,3 +17,5 @@ alias server="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/serve
 alias tmux="TERM=screen-256color-bce tmux"
 alias prune-branch="git branch --merged | egrep -v '(^\*|master|dev)' | xargs git branch -d"
 alias b="cd .."
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
