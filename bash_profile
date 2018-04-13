@@ -1,5 +1,5 @@
 GIT_PS1_SHOWDIRTYSTATE=true
-export PS1='\[\033[G\]\[\033[01;32m\]\w \[\033[00;33m\]\[\033[01;36m\]|>\[\033[00m\] '
+export PS1='\[\033[G\]\[\033[01;32m\]\w \[\033[00;33m\]\[\033[01;36m\]->\[\033[00m\] '
 source ~/.bashrc
 
 [[ -s "$HOME/.profile" ]] && source "$HOME/.profile" # Load the default .profile
