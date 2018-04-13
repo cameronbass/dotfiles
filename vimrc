@@ -15,6 +15,7 @@ Plug 'powerline/powerline'
 Plug 'vim-airline/vim-airline'
 Plug 'godlygeek/tabular'
 Plug 'kassio/neoterm'
+Plug 'Valloric/YouCompleteMe'
 Plug 'ervandew/supertab'
 
 " Ruby
@@ -28,6 +29,7 @@ Plug 'elixir-editors/vim-elixir'
 
 " Javascript
 Plug 'pangloss/vim-javascript'
+Plug 'posva/vim-vue'
 
 " Colorschemes
 Plug 'altercation/vim-colors-solarized'
@@ -51,9 +53,11 @@ set nowrap
 set paste
 set smartindent
 set autoindent
-set cindent
+set autoread
+set nocindent nopaste cinwords+=def smartindent
 set mouse=a
 set noswapfile
+set omnifunc=csscomplete#CompleteCSS
 set rtp+=/usr/local/opt/fzf
 set wildmenu
 set wildmode=longest:full,full
