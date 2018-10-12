@@ -27,5 +27,4 @@ alias gco="git co"
 # FundingWorks
 alias go-foreman="foreman start -f procfile.dev"
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 eval "$(direnv hook bash)"
