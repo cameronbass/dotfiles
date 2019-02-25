@@ -24,6 +24,10 @@ alias run_s3_test_server="fakes3 -r ~/.s3bucket -p 4567"
 alias gcob="git co -b"
 alias gco="git co"
 
+# NETFLIX
+
+export MEECHUM_EMAIL=cbass@netflixcontractors.com
+
 # FundingWorks
 alias go-foreman="foreman start -f procfile.dev"
 
