@@ -1,13 +1,12 @@
+# GIT
 export GITAWAREPROMPT=~/.bash/git-aware-prompt
 source "${GITAWAREPROMPT}/main.sh"
 
-export PATH="$PATH:$HOME/.rvm/bin"
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
-if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi 
-export PS1="\W \[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]\n|> "
-
-# System
-alias reails-ctag="ctags -R --languages=ruby --exclude=.git --exclude=log . $(bundle list _-paths)"
+# --------------------------------------------------------------------------------------------------
+# START SYSTEM ALIASES
+# ==================================================================================================
+# SYSTEM
+alias rails-ctag="ctags -R --languages=ruby --exclude=.git --exclude=log . $(bundle list _-paths)"
 alias updog="brew update; brew upgrade; brew cleanup; brew doctor"
 alias clean_orig="find . -name '*.orig' -delete"
 alias test="RAILS_ENV=test"
@@ -19,16 +18,29 @@ alias prune-branch="git branch --merged | egrep -v '(^\*|master|dev)' | xargs gi
 alias b="cd .."
 alias run_s3_test_server="fakes3 -r ~/.s3bucket -p 4567"
 
-# GIT SPECIFIC
-
+# GIT
 alias gcob="git co -b"
 alias gco="git co"
 
-# NETFLIX
-
-export MEECHUM_EMAIL=cbass@netflixcontractors.com
-
-# FundingWorks
+# FUNDINGWORKS | ENDED | LAST USE: Early 2019
 alias go-foreman="foreman start -f procfile.dev"
+# ==================================================================================================
+# END SYSTEM ALIASES
+# --------------------------------------------------------------------------------------------------
+
+# --------------------------------------------------------------------------------------------------
+# START SYSTEM EXPORTS
+# ==================================================================================================
+# SYSTEM
+export PATH="$PATH:$HOME/.rvm/bin"
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi 
+export PS1="\W \[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]\n|> "
+
+# NETFLIX
+export MEECHUM_EMAIL=cbass@netflixcontractors.com
+# ==================================================================================================
+# END SYSTEM EXPORTS
+# --------------------------------------------------------------------------------------------------
 
 eval "$(direnv hook bash)"
